@@ -1,7 +1,12 @@
+require('dotenv').config();
 const express = require("express");
+const connectDB = require("./src/config/db");
 const postsRouter = require("./src/routes/posts.routes");
 
 const app = express();
+
+// Connect to MongoDB
+connectDB();
 
 app.use(express.json());
 
